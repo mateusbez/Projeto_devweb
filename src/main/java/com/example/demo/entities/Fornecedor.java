@@ -13,7 +13,7 @@ import lombok.Setter;
 public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer CNPJ;
+    private String CNPJ;
 
     @Column(nullable = false)
     private String nome;
