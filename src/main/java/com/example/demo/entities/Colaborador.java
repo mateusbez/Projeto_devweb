@@ -13,9 +13,15 @@ import lombok.Setter;
 public class Colaborador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private String cpf;
 
     @Column(nullable = false)
-    private String nome;
-    private String cargo;    
+    private String login;
+
+    @Column(nullable = false, updatable = false)
+    private String senha;
+
+    @Enumerated(EnumType.STRING)
+        @Column(nullable = false, updatable = false)
+        private Cargo cargo;   
 }
