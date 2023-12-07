@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entities.Reposicao;
 
-public class ReposicaoRepository extends JpaRepository<Reposicao, String> {
+public interface ReposicaoRepository extends JpaRepository<Reposicao, String> {
     
 }

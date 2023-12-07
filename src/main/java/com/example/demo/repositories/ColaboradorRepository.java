@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entities.Colaborador;
 
-public class ColaboradorRepository extends JpaRepository<Colaborador, String> {
+public interface ColaboradorRepository extends JpaRepository<Colaborador, String> {
     
+    Colaborador getColaboradorPorLogin(String login)
 }

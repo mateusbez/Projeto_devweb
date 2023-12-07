@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entities.Fornecedor;
 
-public class FornecedorRepository extends JpaRepository<Fornecedor, String> {
+public interface FornecedorRepository extends JpaRepository<Fornecedor, String> {
     
 }
