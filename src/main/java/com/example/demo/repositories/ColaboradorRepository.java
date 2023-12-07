@@ -6,5 +6,5 @@ import com.example.demo.entities.Colaborador;
 
 public interface ColaboradorRepository extends JpaRepository<Colaborador, String> {
     
-    Colaborador getColaboradorPorLogin(String login)
+    Colaborador getColaboradorPorLogin(String login);
 }
