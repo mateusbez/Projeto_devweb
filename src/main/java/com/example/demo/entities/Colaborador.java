@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import com.example.demo.enums.Cargo;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
