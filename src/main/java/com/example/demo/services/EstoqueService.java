@@ -16,7 +16,7 @@ public class EstoqueService {
 
     public Estoque getEstoque(String idEstoque) {
         Optional<Estoque> estoque = estoqueRepository.findById(idEstoque);
-        return cliente.get();
+        return estoque.get();
     }
 
     public Estoque salvar(Estoque estoque) {
