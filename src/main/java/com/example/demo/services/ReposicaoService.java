@@ -37,9 +37,8 @@ public class ReposicaoService {
         if (estoque != null && fornecedor != null) {
             Reposicao reposicao = new Reposicao();
             reposicao.setEstoque(estoque);
-            reposicao.setFornecedor(fornecedor);
-            reposicao.setQuantidadePedido(quantidadePedido);
-            reposicao.setDataPedido(new Date());
+            reposicao.setFornecedor(fornecedorNome);
+            reposicao.setQuantidade(quantidade);
 
             // Adicione o novo pedido de reposição à lista de reposições no estoque.
             estoque.getReposicao().add(reposicao);
