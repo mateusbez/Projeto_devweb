@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Estoque;
+import com.example.demo.entities.Reposicao;
 import com.example.demo.repositories.EstoqueRepository;
 
 @Service
@@ -38,7 +39,7 @@ public class EstoqueService {
             Reposicao reposicao = new Reposicao();
             reposicao.setEstoque(estoque);
             // Defina o fornecedor adequado e outros detalhes do pedido.
-            reposicao.setFornecedor(fornecedor);
+            reposicao.setFornecedor(fornecedorNome);
             reposicao.setQuantidade(estoque.getQtd_minima() - estoque.getQtd_atual());
 
             // Adicione o novo pedido de reposição à lista de reposições no estoque.
