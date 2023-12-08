@@ -29,5 +29,25 @@ public class ReposicaoService {
     public void remover(String idReposicao) {
         reposicaoRepository.deleteById(idReposicao);
     }
+
+    public void criarReposicao(String idEstoque, String idFornecedor, int quantidadePedido) {
+        Estoque estoque = estoqueRepository.findById(idEstoque).orElse(null);
+        Fornecedor fornecedor = fornecedorRepository.findById(idFornecedor).orElse(null);
+
+        if (estoque != null && fornecedor != null) {
+            Reposicao reposicao = new Reposicao();
+            reposicao.setEstoque(estoque);
+            reposicao.setFornecedor(fornecedor);
+            reposicao.setQuantidadePedido(quantidadePedido);
+            reposicao.setDataPedido(new Date());
+
+            // Adicione o novo pedido de reposição à lista de reposições no estoque.
+            estoque.getReposicao().add(reposicao);
+
+            // Salve as alterações no banco de dados.
+            estoqueRepository.save(estoque);
+            reposicaoRepository.save(reposicao);
+        }
+    }
     
 }
