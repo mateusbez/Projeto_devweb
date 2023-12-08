@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Estoque;
 import com.example.demo.entities.Reposicao;
+import com.example.demo.entities.Cliente;
 import com.example.demo.repositories.EstoqueRepository;
 
 @Service
@@ -59,7 +60,7 @@ public class EstoqueService {
         }
 
     // Agora você pode criar um pedido de reposição se necessário
-    reposicaoService.verificarEAtualizarEstoque(cliente, quantidadeMinimaTotal);
+        reposicaoService.verificarEAtualizarEstoque(cliente, quantidadeMinimaTotal);
     }
 
 }
