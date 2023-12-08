@@ -76,8 +76,8 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
       response.addHeader("fresh-token", freshToken);
 
       return new UsernamePasswordAuthenticationToken(
-          usuario.getLogin(),
-          usuario.getSenha(),
+          colaborador.getLogin(),
+          colaborador.getSenha(),
           Arrays.asList(new SimpleGrantedAuthority(colaborador.getCargo().toString())));
     }
 
