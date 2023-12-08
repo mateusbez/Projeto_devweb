@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,7 +21,10 @@ public class Cliente {
     private String endereco;
     private String item;
     private Integer quantidade;
-    private String telefone; 
+    private String telefone;
+    
+    @OneToMany(mappedBy = "cliente")
+    private List<Estoque> estoque;
     
     
 }

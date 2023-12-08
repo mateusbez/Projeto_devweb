@@ -2,6 +2,8 @@ package com.example.demo.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -19,4 +21,14 @@ public class Reposicao {
     private String nome;
     private Integer quantidade;
     private String fornecedor;
+
+    @ManyToOne
+    @JoinColumn(name = "idEstoque")
+    private Estoque estoque;
+
+    @ManyToOne
+    @JoinColumn(name = "idFornecedor")
+    private Fornecedor fornecedor;
+
+    private Integer qtd_minima;
 }
