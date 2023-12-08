@@ -30,19 +30,19 @@ public class ColaboradorController {
 
     @PostMapping
     @Secured(value = { "ROLE_ADMIN" })
-    public void cadastrarUsuario(@RequestBody Colaborador colaborador) {
+    public void cadastrarColaborador(@RequestBody Colaborador colaborador) {
         colaboradorService.salvar(colaborador);
     }
 
     @PutMapping
     @Secured(value = { "ROLE_ADMIN" })
-    public void atualizarUsuario(@RequestBody Colaborador colaborador) {
+    public void atualizarColaborador(@RequestBody Colaborador colaborador) {
         colaboradorService.atualizar(colaborador);
     }
 
     @DeleteMapping("/{idColaborador}")
     @Secured(value = { "ROLE_ADMIN" })
-    public void removerUsuario(@PathVariable String idColaborador) {
+    public void removerColaborador(@PathVariable String idColaborador) {
         colaboradorService.remover(idColaborador);
     }
 }
