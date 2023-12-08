@@ -42,23 +42,17 @@ public class EstoqueService {
         estoqueRepository.deleteById(idEstoque);
     }
 
-     // Método para verificar a quantidade mínima no estoque e criar um pedido de reposição.
     public void verificarEAtualizarEstoque(Estoque estoque) {
        if (estoque.getQtd_atual() < estoque.getQtd_minima()) {
-            // A quantidade está abaixo do mínimo, crie um novo pedido de reposição.
             Reposicao reposicao = new Reposicao();
             reposicao.setEstoque(estoque);
-            // Defina o fornecedor adequado e outros detalhes do pedido.
             reposicao.setFornecedor(fornecedor);
             reposicao.setQuantidade(estoque.getQtd_minima() - estoque.getQtd_atual());
 
-            // Adicione o novo pedido de reposição à lista de reposições no estoque.
             estoque.getReposicao().add(reposicao);
-
-            // Salve as alterações no banco de dados.
             estoqueRepository.save(estoque);
         }
-    }// Método para somar a quantidade de itens solicitados por cada cliente
+    }
     public void calcularQuantidadeMinimaPorCliente(Cliente cliente) {
         List<Estoque> estoque = estoqueRepository.findByCliente(cliente);
 
@@ -68,7 +62,6 @@ public class EstoqueService {
         quantidadeMinimaTotal += estoque.getQtd_minima();
         }
 
-    // Agora você pode criar um pedido de reposição se necessário
         reposicaoService.verificarEAtualizarEstoque(cliente, quantidadeMinimaTotal);
     }
 

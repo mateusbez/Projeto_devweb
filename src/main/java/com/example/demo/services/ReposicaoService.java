@@ -40,10 +40,7 @@ public class ReposicaoService {
             reposicao.setFornecedor(fornecedorNome);
             reposicao.setQuantidade(quantidade);
 
-            // Adicione o novo pedido de reposição à lista de reposições no estoque.
             estoque.getReposicao().add(reposicao);
-
-            // Salve as alterações no banco de dados.
             estoqueRepository.save(estoque);
             reposicaoRepository.save(reposicao);
         }
