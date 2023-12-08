@@ -22,7 +22,8 @@ public class Estoque {
 
     @Column(nullable = false)
     private String nome;
-    private String qtd_minima;
+    private Integer qtd_minima;
+    private Integer qtd_atual;
 
     @ManyToOne
     @JoinColumn(name = "id_colaborador")
