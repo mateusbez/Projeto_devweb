@@ -10,6 +10,8 @@ import com.example.demo.entities.Estoque;
 import com.example.demo.entities.Reposicao;
 import com.example.demo.entities.Cliente;
 import com.example.demo.repositories.EstoqueRepository;
+import com.example.demo.repositories.FornecedorRepository;
+import com.example.demo.repositories.ReposicaoRepository;
 
 @Service
 public class EstoqueService {
