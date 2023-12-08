@@ -31,7 +31,7 @@ public class ReposicaoController {
     @PostMapping
     @Secured(value = { "ROLE_ADMIN" })
     public void cadastrarReposicao(@RequestBody Reposicao reposicao) {
-        reposicaoService.salvar(resposicao);
+        reposicaoService.salvar(reposicao);
     }
 
     @PutMapping

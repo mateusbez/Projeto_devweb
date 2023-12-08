@@ -36,7 +36,7 @@ public class EstoqueController {
 
     @PutMapping
     @Secured(value = { "ROLE_ADMIN" })
-    public void atualizarEstoque(@RequestBody Estoque Estoque) {
+    public void atualizarEstoque(@RequestBody Estoque estoque) {
         estoqueService.atualizar(estoque);
     }
 
