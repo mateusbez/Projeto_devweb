@@ -17,6 +17,12 @@ public class EstoqueService {
     @Autowired
     private EstoqueRepository estoqueRepository;
 
+    @Autowired
+    private FornecedorRepository fornecedorRepository;
+
+    @Autowired
+    private ReposicaoRepository reposicaoRepository;
+
     public Estoque getEstoque(String idEstoque) {
         Optional<Estoque> estoque = estoqueRepository.findById(idEstoque);
         return estoque.get();
@@ -56,7 +62,7 @@ public class EstoqueService {
 
         int quantidadeMinimaTotal = 0;
 
-        for (Estoque estoque : estoque) {
+        for (Estoque estoque : estoques) {
         quantidadeMinimaTotal += estoque.getQtd_minima();
         }
 
