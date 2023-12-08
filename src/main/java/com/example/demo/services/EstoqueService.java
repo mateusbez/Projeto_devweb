@@ -41,7 +41,7 @@ public class EstoqueService {
             Reposicao reposicao = new Reposicao();
             reposicao.setEstoque(estoque);
             // Defina o fornecedor adequado e outros detalhes do pedido.
-            reposicao.setFornecedor(nome);
+            reposicao.setFornecedor(fornecedor);
             reposicao.setQuantidade(estoque.getQtd_minima() - estoque.getQtd_atual());
 
             // Adicione o novo pedido de reposição à lista de reposições no estoque.
