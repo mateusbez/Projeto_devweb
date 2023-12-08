@@ -20,7 +20,7 @@ public class Reposicao {
     @Column(nullable = false)
     private String nome;
     private Integer quantidade;
-    private String fornecedor;
+    private String fornecedorNome;
 
     @ManyToOne
     @JoinColumn(name = "idEstoque")

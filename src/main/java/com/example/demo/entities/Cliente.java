@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.Column;
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue;
